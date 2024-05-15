@@ -2,7 +2,7 @@ from random import randint
 
 lista_npcs = []
 
-def criar_monstro():
+def criar_npc():
     level = randint(0, 50)
     novo_npc ={
         
@@ -10,7 +10,11 @@ def criar_monstro():
         'level': level,
         'dano': 5 * level,
         'hp': 100 * level,
-        
+
 
     }
     lista_npcs.append(novo_npc)
+
+def gerar_npcs(n_npc):
+    
+    for x in range(n_npc):
