@@ -1,18 +1,17 @@
+import json
 
-
+CAMINHO_ARQUIVO = 'Familia.json'
 class Pessoa:
-
-    atributo = 'valor'
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
 
-    def get_ano_nascimento(self):
-        return 2024 - self.idade
-    
+
 p1 = Pessoa('vinicius', 22)
 p2 = Pessoa('Luana', 21)
+p3 = Pessoa('Alice', 2)
 
+bd = [vars(p1), p2.__dict__, vars(p3)]
 
-print(p1.get_ano_nascimento())
-print(p2.get_ano_nascimento())
+with open(CAMINHO_ARQUIVO, 'w') as arquivo:
+    json.dump(bd, arquivo, ensure_ascii= False, indent=2)
