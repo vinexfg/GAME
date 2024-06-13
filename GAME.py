@@ -1,53 +1,50 @@
 from random import randint
 
-lista_npcs = []
+list_npcs = []
 
 
-player ={
-    'nome': 'vinicius',
-    'level': 1,
-    'exp': 0,
-    'expMax': 50,
-    'hp': 100,
-    'hpMax': 100,
-    'dano': 25
-
-
+player = {
+    'Nome': 'vinicius',
+    'level': '1',
+    'exp': '0',
+    'expMax': '50',
+    'hp': '100',
+    'hpMax': '100',
+    'damege': '25',
 }
 
 
-def criar_npcs():
+def create_npcs():
     level = randint(0, 60)
-    novo_npcs = {
-        'nome': f'ARK #{level}', 
+    novo_npcs ={
+        'name': 'ARK',
         'level': level,
-        'dano': level,
-        'hp': 100 * level,
-        'exp': 7 * level
-        }
-    lista_npcs.append(novo_npcs)
+        'damege': level,
+        'hp': '100' * level,
+        'exp': 7 * level,
 
-def gerar_npcs(qtd_npc):
-    for x in range(qtd_npc):
-        criar_npcs()
+    }
+    
+    list_npcs.append(novo_npcs)
+
+def generate_npcs(amount_npc):
+    for x in range(amount_npc):
+        create_npcs()
 
 def exibir_npcs():
-    for npc in lista_npcs:
-        print(f'Nome: {npc['nome']} // Level: {npc['level']} // Dano: {npc['dano']} // HP: {npc['hp']} ')
+    for npc in list_npcs:
+        print(f'Name: {npc['name']} // Level: {npc['level']} // Damege: {npc['damege']} // Hp: {npc['hp']}')
 
-
-#atacar_npc(npc) - npc:hp - plaver:dano
 def atacar_npc(npc):
     npc['hp'] -= player['dano']
-#atacar_player(npc) - player:hp - npc:dano
 
-qtd_de_npcs = 5     
-criar_npcs()
-gerar_npcs(qtd_de_npcs)
+
+number_of_npc = 5
+create_npcs()
+generate_npcs(number_of_npc)
 exibir_npcs()
 
+select_npc = list_npcs[0]
 
-npc_selecionado = lista_npcs[0]
-
-print(f'NPC para atacar: {npc_selecionado}')
+print(f'Npc to attack: {select_npc}')
 
