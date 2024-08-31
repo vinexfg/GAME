@@ -33,6 +33,9 @@ class Personagem:
             #fazer um classe de item ou fazer um def...
     
     def add_item(self):
+        self.atacar()
+        prtint
+
 
 
 
