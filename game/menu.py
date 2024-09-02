@@ -18,3 +18,5 @@ def mostrar_menu():
     
     def carregar_jogo():
         print('Carregando jogo salvo')
+
+    

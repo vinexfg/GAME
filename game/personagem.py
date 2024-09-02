@@ -28,13 +28,6 @@ class Personagem:
         if self.vida <= 0:
             self.vida = 0
             print(f'{self.nome} foi derrotado!')
-        else:
-            print(f'{item} foi adicionado ao inventario de {self.nome}')
-            #fazer um classe de item ou fazer um def...
-    
-    def add_item(self):
-        self.atacar()
-        prtint
 
 
 
